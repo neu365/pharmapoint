@@ -1,0 +1,27 @@
+name: pharmapoint
+description: A new Flutter project.
+
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.3.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: "^0.7.0"
+  cupertino_icons: ^0.1.2
+  cloud_firestore: ^0.16.0
+  firebase_auth: ^0.20.1
+  intl: ^0.16.1
+  firebase_messaging: "^8.0.0-dev.15"
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+  uses-material-design: true
