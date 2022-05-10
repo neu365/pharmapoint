@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
                 ? const SplashScreen()
                 : StreamBuilder(
                     stream: FirebaseAuth.instance.authStateChanges(),
-                    builder: (ctx, userSnapshot) {
+                    builder: (context, userSnapshot) {
                       if (userSnapshot.connectionState ==
                           ConnectionState.waiting) {
                         return const SplashScreen();

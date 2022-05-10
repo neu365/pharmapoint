@@ -11,16 +11,18 @@ class Pedidos extends StatelessWidget {
     final user = FirebaseAuth.instance.currentUser;
     return StreamBuilder(
       stream: FirebaseFirestore.instance.collection('pedido').snapshots(),
-      builder: (context, pedidoSnapshot) {
+      builder: (context, AsyncSnapshot<QuerySnapshot> pedidoSnapshot) {
         if (pedidoSnapshot.connectionState == ConnectionState.waiting) {
           return const Center(
             child: CircularProgressIndicator(),
           );
         }
+
         if (!pedidoSnapshot.hasData) {
           return const Center(child: Text('A lista de pedidos está vazia!'));
         } else {
           final pedidoDocs = pedidoSnapshot.data.docs;
+
           return ListView.builder(
             itemCount: pedidoDocs.length,
             itemBuilder: (context, index) => PedidoItem(

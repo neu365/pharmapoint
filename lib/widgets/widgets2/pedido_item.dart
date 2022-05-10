@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, overridden_fields
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class PedidoItem extends StatelessWidget {
@@ -9,7 +10,7 @@ class PedidoItem extends StatelessWidget {
 
   final String title;
   final num estimatedCost;
-  final String requestTime;
+  final Timestamp requestTime;
   final bool isAccepted;
   final bool hasPrescription;
   final String userName;
