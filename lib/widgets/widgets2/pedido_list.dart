@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmapoint/widgets/widgets2/pedido_item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:intl/intl.dart';
 
 class Pedidos extends StatelessWidget {
   const Pedidos({Key key}) : super(key: key);
@@ -33,6 +34,7 @@ class Pedidos extends StatelessWidget {
               pedidoDocs[index].data()['hasPrescription'],
               pedidoDocs[index].data()['userId'],
               pedidoDocs[index].data()['userId'] == user.uid,
+              5,
               key: ValueKey(pedidoDocs[index].id),
             ),
           );

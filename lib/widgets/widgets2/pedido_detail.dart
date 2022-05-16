@@ -3,28 +3,19 @@
 import 'package:flutter/material.dart';
 
 class PedidoDetail extends StatelessWidget {
-  final int pedidoId;
   final String title;
   final double estimatedCost;
-  final int utilizadorId;
-  final int farmaceuticoId;
-  final DateTime requestTime;
+  final String requestTime;
   bool isAccepted;
   bool hasPrescription;
-  final int prescriptionNumber;
 
   PedidoDetail(
-      this.pedidoId,
-      this.title,
-      this.estimatedCost,
-      this.utilizadorId,
-      this.farmaceuticoId,
-      this.requestTime,
-      this.isAccepted,
-      this.hasPrescription,
-      this.prescriptionNumber,
-      {Key key})
-      : super(key: key);
+    this.title,
+    this.estimatedCost,
+    this.requestTime,
+    this.isAccepted,
+    this.hasPrescription,
+  );
 
   @override
   Widget build(BuildContext context) {
