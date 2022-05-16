@@ -1,11 +1,12 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class PedidoDetail extends StatelessWidget {
   final String title;
   final double estimatedCost;
-  final String requestTime;
+  final DateTime requestTime;
   bool isAccepted;
   bool hasPrescription;
 

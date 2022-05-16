@@ -2,8 +2,8 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-//import 'package:intl/intl.dart';
 import 'package:pharmapoint/screens/pedido_detail_screen.dart';
+import 'package:intl/intl.dart';
 
 class PedidoItem extends StatelessWidget {
   const PedidoItem(
@@ -30,6 +30,7 @@ class PedidoItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DateTime myDateTime = requestTime.toDate();
     void selectPedido(BuildContext ctx) {
       Navigator.of(ctx).push(
         MaterialPageRoute(
@@ -37,7 +38,7 @@ class PedidoItem extends StatelessWidget {
             return PedidoDetailScreen(
               title,
               estimatedCost,
-              'resquestTime',
+              myDateTime,
               isAccepted,
               hasPrescription,
             );
@@ -80,7 +81,7 @@ class PedidoItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'requestTime' /*DateFormat.yMEd().format(pedidos[index].requestTime)*/,
+                '${DateFormat.yMEd().format(myDateTime)}',
               ),
               Row(
                 children: [
