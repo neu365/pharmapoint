@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:pharmapoint/screens/fatura.dart';
 
 class PedidoDetail extends StatelessWidget {
   final String title;
@@ -20,6 +21,16 @@ class PedidoDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void selectFatura(BuildContext ctx) {
+      Navigator.of(ctx).push(
+        MaterialPageRoute(
+          builder: (_) {
+            return FaturaWidget();
+          },
+        ),
+      );
+    }
+
     return SizedBox(
       height: 400,
       width: double.infinity,
@@ -33,8 +44,8 @@ class PedidoDetail extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  const Text(
-                    'Título: ',
+                  Text(
+                    'Título:',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                   Text(
@@ -53,7 +64,7 @@ class PedidoDetail extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                   Text(
-                    '$estimatedCost€ ... ',
+                    '$estimatedCost€ ',
                     style: const TextStyle(fontSize: 20),
                   ),
                 ],
@@ -62,10 +73,29 @@ class PedidoDetail extends StatelessWidget {
                 height: 10,
                 width: 100,
               ),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.assignment),
-                color: Colors.green[900],
+              Row(
+                children: [
+                  const Text('Prescrição: ',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  hasPrescription
+                      ? Text('Sim', style: TextStyle(fontSize: 20))
+                      : Text('Não', style: TextStyle(fontSize: 20)),
+                ],
+              ),
+              Row(
+                children: [
+                  Text('Fatura:',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+                  IconButton(
+                    onPressed: () {
+                      selectFatura(context);
+                    },
+                    icon: const Icon(Icons.assignment),
+                    color: Colors.green[900],
+                  ),
+                ],
               ),
             ],
           ),
