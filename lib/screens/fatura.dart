@@ -16,7 +16,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         title: const Text('Pedidos'),
-        backgroundColor: Colors.green,
+        backgroundColor: Theme.of(context).primaryColor,
       ),
       backgroundColor: Colors.white,
       body: SafeArea(

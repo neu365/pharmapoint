@@ -14,7 +14,7 @@ class PaginaInicial extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('PharmaPoint'),
-        backgroundColor: Colors.green[600],
+        backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         actions: [
           DropdownButton(
@@ -50,10 +50,11 @@ class PaginaInicial extends StatelessWidget {
       ),
       body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         // ignore: prefer_const_literals_to_create_immutables
-        Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
-          const Notificacoes(),
+        Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const ChatButton(),
+          SizedBox(height: 10, width: 10),
           const Recentes(),
+          SizedBox(height: 10, width: 10),
           const NovoPedido(),
         ]),
       ]),

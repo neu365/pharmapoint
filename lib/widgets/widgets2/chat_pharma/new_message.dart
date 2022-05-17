@@ -15,16 +15,17 @@ class NewMessageState extends State<NewMessage> {
 
   void _sendMessage() async {
     FocusScope.of(context).unfocus();
-    final user = FirebaseAuth.instance.currentUser;
-    final userData = await FirebaseFirestore.instance
+    final pharma = FirebaseAuth.instance.currentUser;
+    final pharmaData = await FirebaseFirestore.instance
         .collection('users')
-        .doc(user.uid)
+        .doc(pharma.uid)
         .get();
-    FirebaseFirestore.instance.collection('chat').add({
+    FirebaseFirestore.instance.collection('chats').add({
       'text': _enteredMessage,
       'createdAt': Timestamp.now(),
-      'userId': user.uid,
-      'username': userData.data()['username']
+      'userId': pharma.uid,
+      'username': pharmaData.data()['username'],
+      'clientId': 'asdfgh',
     });
     _controller.clear();
   }

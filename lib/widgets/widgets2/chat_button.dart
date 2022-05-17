@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/chat_screen.dart';
+import 'package:pharmapoint/screens/users_list.dart';
 
 class ChatButton extends StatelessWidget {
   const ChatButton({Key key}) : super(key: key);
 
-  void selectRecentes(BuildContext ctx) {
+  void selectUsers(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return const ChatScreen();
+          return const UsersList();
         },
       ),
     );
@@ -22,7 +22,7 @@ class ChatButton extends StatelessWidget {
       child: ElevatedButton(
           onPressed: () {
             debugPrint('Button clicked!');
-            selectRecentes(context);
+            selectUsers(context);
           },
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
