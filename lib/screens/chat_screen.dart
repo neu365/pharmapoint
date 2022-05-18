@@ -21,7 +21,7 @@ class ChatScreen extends StatelessWidget {
           Expanded(
             child: Messages(clientId),
           ),
-          const NewMessage(),
+          NewMessage(clientId),
         ],
       ),
     );

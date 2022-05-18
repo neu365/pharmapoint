@@ -3,19 +3,24 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class NewMessage extends StatefulWidget {
-  const NewMessage({Key key}) : super(key: key);
+  final String clientId;
+
+  NewMessage(this.clientId);
 
   @override
-  NewMessageState createState() => NewMessageState();
+  NewMessageState createState() => NewMessageState(clientId: this.clientId);
 }
 
 class NewMessageState extends State<NewMessage> {
   final _controller = TextEditingController();
   var _enteredMessage = '';
+  String clientId;
+  NewMessageState({this.clientId});
 
-  void _sendMessage() async {
+  Future _sendMessage(clientId) async {
     FocusScope.of(context).unfocus();
     final pharma = FirebaseAuth.instance.currentUser;
+
     final pharmaData = await FirebaseFirestore.instance
         .collection('users')
         .doc(pharma.uid)
@@ -25,7 +30,7 @@ class NewMessageState extends State<NewMessage> {
       'createdAt': Timestamp.now(),
       'userId': pharma.uid,
       'username': pharmaData.data()['username'],
-      'clientId': 'asdfgh',
+      'clientId': clientId,
     });
     _controller.clear();
   }
@@ -52,12 +57,13 @@ class NewMessageState extends State<NewMessage> {
             ),
           ),
           IconButton(
-            color: Theme.of(context).primaryColor,
-            icon: const Icon(
-              Icons.send,
-            ),
-            onPressed: _enteredMessage.trim().isEmpty ? null : _sendMessage,
-          )
+              color: Theme.of(context).primaryColor,
+              icon: const Icon(
+                Icons.send,
+              ),
+              onPressed: _enteredMessage.trim().isEmpty
+                  ? () => {}
+                  : () => _sendMessage(widget.clientId))
         ],
       ),
     );
