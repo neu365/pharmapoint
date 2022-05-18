@@ -55,7 +55,7 @@ class AuthScreenState extends State<AuthScreen> {
       }
 
       // ignore: deprecated_member_use
-      Scaffold.of(ctx).showSnackBar(
+      ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(message),
           backgroundColor: Theme.of(ctx).errorColor,
