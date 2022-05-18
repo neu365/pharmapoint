@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmapoint/screens/fatura.dart';
 
@@ -25,7 +24,7 @@ class PedidoDetail extends StatelessWidget {
       Navigator.of(ctx).push(
         MaterialPageRoute(
           builder: (_) {
-            return FaturaWidget();
+            return const FaturaWidget();
           },
         ),
       );
@@ -44,7 +43,7 @@ class PedidoDetail extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     'Título: ',
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                   ),
@@ -79,13 +78,13 @@ class PedidoDetail extends StatelessWidget {
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                   hasPrescription
-                      ? Text('Sim', style: TextStyle(fontSize: 20))
-                      : Text('Não', style: TextStyle(fontSize: 20)),
+                      ? const Text('Sim', style: TextStyle(fontSize: 20))
+                      : const Text('Não', style: TextStyle(fontSize: 20)),
                 ],
               ),
               Row(
                 children: [
-                  Text('Fatura:',
+                  const Text('Fatura:',
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
                   IconButton(

@@ -4,10 +4,10 @@ class FaturaWidget extends StatefulWidget {
   const FaturaWidget({Key key}) : super(key: key);
 
   @override
-  _FaturaWidgetState createState() => _FaturaWidgetState();
+  FaturaWidgetState createState() => FaturaWidgetState();
 }
 
-class _FaturaWidgetState extends State<FaturaWidget> {
+class FaturaWidgetState extends State<FaturaWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -27,9 +27,9 @@ class _FaturaWidgetState extends State<FaturaWidget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
                 child: Stack(
-                  alignment: AlignmentDirectional(-1, -0.35),
+                  alignment: const AlignmentDirectional(-1, -0.35),
                   children: [
                     SingleChildScrollView(
                       child: Column(
@@ -39,7 +39,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                         children: [
                           Container(
                             height: 150,
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               color: Color(0xFFEEEEEE),
                             ),
                             child: Image.asset(
@@ -59,11 +59,11 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Preço',
                           style: TextStyle(color: Colors.black),
@@ -81,11 +81,11 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Iva',
                           style: TextStyle(
@@ -108,11 +108,11 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const [
                         Text(
                           'Taxa de entrega',
                           style: TextStyle(
@@ -135,7 +135,8 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(24, 4, 24, 24),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 24),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -143,7 +144,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                         Row(
                           mainAxisSize: MainAxisSize.max,
                           children: [
-                            Text(
+                            const Text(
                               'Total',
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
@@ -153,7 +154,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                               ),
                             ),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.info_outlined,
                                 color: Color(0xFF57636C),
                                 size: 18,
@@ -164,7 +165,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
                             ),
                           ],
                         ),
-                        Text(
+                        const Text(
                           'Total',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
@@ -180,7 +181,7 @@ class _FaturaWidgetState extends State<FaturaWidget> {
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
-                children: [],
+                children: const [],
               ),
             ],
           ),

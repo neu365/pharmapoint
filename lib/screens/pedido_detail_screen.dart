@@ -1,6 +1,5 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmapoint/widgets/widgets2/pedido_detail.dart';
 
@@ -12,7 +11,9 @@ class PedidoDetailScreen extends StatelessWidget {
   bool hasPrescription;
 
   PedidoDetailScreen(this.title, this.estimatedCost, this.requestTime,
-      this.isAccepted, this.hasPrescription);
+      this.isAccepted, this.hasPrescription,
+      {Key key})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

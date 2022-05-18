@@ -1,13 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors, overridden_fields
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:pharmapoint/screens/chat_screen.dart';
-import 'package:pharmapoint/screens/pedido_detail_screen.dart';
-import 'package:intl/intl.dart';
 
 class UserItem extends StatelessWidget {
-  UserItem(this.username, this.clientId);
+  const UserItem(this.username, this.clientId);
 
   final String username;
   final String clientId;

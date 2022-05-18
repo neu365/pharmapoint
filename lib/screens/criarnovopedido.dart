@@ -39,24 +39,24 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: ListView(
-            padding: EdgeInsets.all(10.0),
+            padding: const EdgeInsets.all(10.0),
             scrollDirection: Axis.vertical,
             children: [
               Theme(
                 data: ThemeData(
-                  unselectedWidgetColor: Color(0xFF95A1AC),
+                  unselectedWidgetColor: const Color(0xFF95A1AC),
                 ),
                 child: CheckboxListTile(
                   value: checkboxListTileValue1 ??= false,
                   onChanged: (newValue) =>
                       setState(() => checkboxListTileValue1 = newValue),
-                  title: Text(
+                  title: const Text(
                     'Com receita',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  tileColor: Color(0xFFF5F5F5),
+                  tileColor: const Color(0xFFF5F5F5),
                   activeColor: Colors.black,
                   dense: false,
                   controlAffinity: ListTileControlAffinity.trailing,
@@ -64,34 +64,34 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
               ),
               Theme(
                 data: ThemeData(
-                  unselectedWidgetColor: Color(0xFF95A1AC),
+                  unselectedWidgetColor: const Color(0xFF95A1AC),
                 ),
                 child: CheckboxListTile(
                   value: checkboxListTileValue2 ??= false,
                   onChanged: (newValue) =>
                       setState(() => checkboxListTileValue2 = newValue),
-                  title: Text(
+                  title: const Text(
                     'Sem receita',
                     style: TextStyle(
                       fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  tileColor: Color(0xFFF5F5F5),
+                  tileColor: const Color(0xFFF5F5F5),
                   activeColor: Colors.green,
                   dense: false,
                   controlAffinity: ListTileControlAffinity.trailing,
                 ),
               ),
-              Text(
+              const Text(
                 'Dados da receita:',
                 style: TextStyle(color: Colors.black, fontSize: 18),
               ),
               Row(
                 mainAxisSize: MainAxisSize.max,
-                children: [],
+                children: const [],
               ),
-              Text(
+              const Text(
                 'Número da prescrição:',
                 style: TextStyle(
                   color: Colors.black,
@@ -101,19 +101,19 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 controller: textController1,
                 onChanged: (_) => EasyDebounce.debounce(
                   'textController1',
-                  Duration(milliseconds: 2000),
+                  const Duration(milliseconds: 2000),
                   () => setState(() {}),
                 ),
                 autofocus: true,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: '[...]',
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
@@ -123,17 +123,17 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
               ),
-              Text(
+              const Text(
                 'Código da prescrição:',
                 style: TextStyle(
                   color: Colors.black,
@@ -143,19 +143,19 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 controller: textController2,
                 onChanged: (_) => EasyDebounce.debounce(
                   'textController2',
-                  Duration(milliseconds: 2000),
+                  const Duration(milliseconds: 2000),
                   () => setState(() {}),
                 ),
                 autofocus: true,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: '[...]',
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
@@ -165,17 +165,17 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
               ),
-              Text(
+              const Text(
                 'PIN da prescrição:',
                 style: TextStyle(
                   color: Colors.black,
@@ -185,19 +185,19 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 controller: textController3,
                 onChanged: (_) => EasyDebounce.debounce(
                   'textController3',
-                  Duration(milliseconds: 2000),
+                  const Duration(milliseconds: 2000),
                   () => setState(() {}),
                 ),
                 autofocus: true,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: '[...]',
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
@@ -207,17 +207,17 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
               ),
-              Text(
+              const Text(
                 'Observações:',
                 style: TextStyle(
                   color: Colors.black,
@@ -227,19 +227,19 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 controller: textController4,
                 onChanged: (_) => EasyDebounce.debounce(
                   'textController4',
-                  Duration(milliseconds: 2000),
+                  const Duration(milliseconds: 2000),
                   () => setState(() {}),
                 ),
                 autofocus: true,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: '[...]',
                   enabledBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
@@ -249,13 +249,13 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                       color: Color(0x00000000),
                       width: 1,
                     ),
-                    borderRadius: const BorderRadius.only(
+                    borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(4.0),
                       topRight: Radius.circular(4.0),
                     ),
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                 ),
               ),

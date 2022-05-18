@@ -5,7 +5,7 @@ import 'package:pharmapoint/widgets/widgets2/chat_pharma/message.dart';
 import 'package:pharmapoint/widgets/widgets2/chat_pharma/new_message.dart';
 
 class ChatScreen extends StatelessWidget {
-  ChatScreen(this.clientId);
+  const ChatScreen(this.clientId, {Key key}) : super(key: key);
 
   final String clientId;
 

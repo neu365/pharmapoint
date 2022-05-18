@@ -66,7 +66,7 @@ class PedidoItem extends StatelessWidget {
               padding: const EdgeInsets.all(6),
               child: FittedBox(
                 child: Text(
-                  '${estimatedCost}€',
+                  '$estimatedCost€',
                   style: TextStyle(
                       color: Colors.green[900], fontWeight: FontWeight.bold),
                 ),
@@ -81,7 +81,7 @@ class PedidoItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                '${DateFormat.yMEd().format(myDateTime)}',
+                DateFormat.yMEd().format(myDateTime),
               ),
               Row(
                 children: [

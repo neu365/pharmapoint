@@ -7,7 +7,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:pharmapoint/widgets/widgets2/chat_pharma/message_bubble.dart';
 
 class Messages extends StatelessWidget {
-  Messages(this.clientId);
+  Messages(this.clientId, {Key key}) : super(key: key);
   final user = FirebaseAuth.instance.currentUser;
   final String clientId;
 
@@ -18,10 +18,7 @@ class Messages extends StatelessWidget {
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection("chats")
-          /*.orderBy(
-            'createdAt',
-            descending: true,
-          )*/
+          .orderBy('createdAt', descending: true)
           .where('clientId', isEqualTo: clientId)
           .snapshots(),
       builder: (ctx, AsyncSnapshot<QuerySnapshot> chatsSnapshot) {

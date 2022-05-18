@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:pharmapoint/screens/chat_screen.dart';
 import 'package:pharmapoint/widgets/widgets2/chat_pharma/user_item.dart';
 
 class UsersList extends StatelessWidget {
@@ -9,8 +7,6 @@ class UsersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final user = FirebaseAuth.instance.currentUser;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Utilizadores'),

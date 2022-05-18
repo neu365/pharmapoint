@@ -5,7 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class NewMessage extends StatefulWidget {
   final String clientId;
 
-  NewMessage(this.clientId);
+  const NewMessage(this.clientId, {Key key}) : super(key: key);
 
   @override
   NewMessageState createState() => NewMessageState(clientId: this.clientId);

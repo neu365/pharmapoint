@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:pharmapoint/widgets/widgets2/chat_button.dart';
-import 'package:pharmapoint/widgets/widgets2/notificacoes.dart';
 import 'package:pharmapoint/widgets/widgets2/recentes_butao.dart';
 import 'package:pharmapoint/widgets/widgets2/novopedido_butao.dart';
 
@@ -52,9 +51,9 @@ class PaginaInicial extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const ChatButton(),
-          SizedBox(height: 10, width: 10),
+          const SizedBox(height: 10, width: 10),
           const Recentes(),
-          SizedBox(height: 10, width: 10),
+          const SizedBox(height: 10, width: 10),
           const NovoPedido(),
         ]),
       ]),
