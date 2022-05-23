@@ -14,7 +14,7 @@ class Messages extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
-    print(clientId);
+
     return StreamBuilder(
       stream: FirebaseFirestore.instance
           .collection("chats")

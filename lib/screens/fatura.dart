@@ -159,9 +159,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                                 color: Color(0xFF57636C),
                                 size: 18,
                               ),
-                              onPressed: () {
-                                print('IconButton pressed ...');
-                              },
+                              onPressed: () {},
                             ),
                           ],
                         ),
