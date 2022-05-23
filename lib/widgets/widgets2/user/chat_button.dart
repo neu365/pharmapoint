@@ -1,40 +1,41 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/user/criarnovopedido.dart';
+import 'package:pharmapoint/screens/user/chat_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class NovoPedido extends StatelessWidget {
-  const NovoPedido({Key key}) : super(key: key);
+class ChatButton extends StatelessWidget {
+  const ChatButton({Key key}) : super(key: key);
+
+  void selectUsers(BuildContext ctx) {
+    Navigator.of(ctx).push(
+      MaterialPageRoute(
+        builder: (_) {
+          return ChatScreen(FirebaseAuth.instance.currentUser.uid);
+        },
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
-    void selectNovo(BuildContext ctx) {
-      Navigator.of(ctx).push(
-        MaterialPageRoute(
-          builder: (_) {
-            return CriarNovoPedidoWidget();
-          },
-        ),
-      );
-    }
-
     return SizedBox(
       width: 400,
       height: 100,
       child: ElevatedButton(
           onPressed: () {
-            selectNovo(context);
+            selectUsers(context);
           },
           style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.green[400]),
+            backgroundColor: MaterialStateProperty.all(
+              Colors.green[100],
+            ),
             padding: MaterialStateProperty.all(
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 20)),
+                const EdgeInsets.symmetric(horizontal: 100, vertical: 20)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Novo pedido',
+              const Text(
+                'Chat',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
@@ -45,7 +46,7 @@ class NovoPedido extends StatelessWidget {
                 height: 8,
               ),
               Icon(
-                Icons.add,
+                Icons.chat,
                 color: Colors.green[900],
               )
             ],
