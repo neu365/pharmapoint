@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:pharmapoint/widgets/widgets2/chat_pharma/message_bubble.dart';
+import 'package:pharmapoint/widgets/widgets2/farma/chat_pharma/message_bubble.dart';
 
 class Messages extends StatelessWidget {
   Messages(this.clientId, {Key key}) : super(key: key);

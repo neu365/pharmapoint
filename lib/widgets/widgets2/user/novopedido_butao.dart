@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/criarnovopedido.dart';
+import 'package:pharmapoint/screens/user/criarnovopedido.dart';
 
 class NovoPedido extends StatelessWidget {
   const NovoPedido({Key key}) : super(key: key);

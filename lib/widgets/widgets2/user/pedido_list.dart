@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/widgets/widgets2/pedido_item.dart';
+import 'package:pharmapoint/widgets/widgets2/user/pedido_item.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class Pedidos extends StatelessWidget {

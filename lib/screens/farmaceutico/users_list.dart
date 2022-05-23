@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/widgets/widgets2/chat_pharma/user_item.dart';
+import 'package:pharmapoint/widgets/widgets2/farma/chat_pharma/user_item.dart';
 
 class UsersList extends StatelessWidget {
   const UsersList({Key key}) : super(key: key);

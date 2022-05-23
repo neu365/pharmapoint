@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/widgets/widgets2/pedido_detail.dart';
+import 'package:pharmapoint/widgets/widgets2/user/pedido_detail.dart';
 
 class PedidoDetailScreen extends StatelessWidget {
   final String title;

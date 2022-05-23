@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:pharmapoint/screens/auth_screen.dart';
-import 'package:pharmapoint/screens/pagina_inicial.dart';
+import 'package:pharmapoint/screens/farmaceutico/pagina_inicial_farma.dart';
+import 'package:pharmapoint/screens/user/pagina_inicial_user.dart';
 import 'package:pharmapoint/screens/splash_screen.dart';
 
 import 'package:firebase_core/firebase_core.dart';
@@ -46,7 +47,12 @@ class MyApp extends StatelessWidget {
                         return const SplashScreen();
                       }
                       if (userSnapshot.hasData) {
-                        return const PaginaInicial();
+                        if (FirebaseAuth.instance.currentUser.uid ==
+                            'NpfvAtAaKHg3zEXKlxTWXIjVrsd2') {
+                          return const PaginaInicialFarma();
+                        } else {
+                          return const PaginaInicialUser();
+                        }
                       }
                       return const AuthScreen();
                     }),

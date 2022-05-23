@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/users_list.dart';
 
-class ChatButton extends StatelessWidget {
-  const ChatButton({Key key}) : super(key: key);
+import 'package:pharmapoint/screens/farmaceutico/pedidos_farma.dart';
 
-  void selectUsers(BuildContext ctx) {
+class Recentes extends StatelessWidget {
+  const Recentes({Key key}) : super(key: key);
+
+  void selectRecentes(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return const UsersList();
+          return const PedidosScreenFarma();
         },
       ),
     );
@@ -22,18 +23,18 @@ class ChatButton extends StatelessWidget {
       child: ElevatedButton(
           onPressed: () {
             debugPrint('Button clicked!');
-            selectUsers(context);
+            selectRecentes(context);
           },
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(
-              Colors.green[100],
+              Colors.green[200],
             ),
             padding: MaterialStateProperty.all(
                 const EdgeInsets.symmetric(horizontal: 100, vertical: 20)),
           ),
           child: const Center(
             child: Text(
-              'Chat',
+              'Todos os pedidos',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 25.0,

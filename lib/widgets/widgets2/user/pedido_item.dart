@@ -2,7 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/pedido_detail_screen.dart';
+import 'package:pharmapoint/screens/user/pedido_detail_screen.dart';
 import 'package:intl/intl.dart';
 
 class PedidoItem extends StatelessWidget {
