@@ -27,7 +27,7 @@ class PaginaInicialFarma extends StatelessWidget {
           child: Row(
             children: const [
               Icon(
-                Icons.edit,
+                Icons.account_circle,
                 color: Colors.green,
               ),
               SizedBox(
@@ -46,7 +46,7 @@ class PaginaInicialFarma extends StatelessWidget {
     String selectedValue = " ";
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PharmaPoint - Farmacêutico'),
+        title: const Text('PharmaPoint'),
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
         actions: [
@@ -65,6 +65,7 @@ class PaginaInicialFarma extends StatelessWidget {
               }
               if (itemIdentifier == 'edit') {
                 //escrever aqui a classe para a página de editar perfil
+                //para a página de perfil criar um novo documento (nova classe) em screens
               }
             },
           ),
