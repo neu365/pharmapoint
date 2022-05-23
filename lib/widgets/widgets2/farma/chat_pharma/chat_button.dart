@@ -21,7 +21,6 @@ class ChatButton extends StatelessWidget {
       height: 100,
       child: ElevatedButton(
           onPressed: () {
-            debugPrint('Button clicked!');
             selectUsers(context);
           },
           style: ButtonStyle(
@@ -31,14 +30,25 @@ class ChatButton extends StatelessWidget {
             padding: MaterialStateProperty.all(
                 const EdgeInsets.symmetric(horizontal: 100, vertical: 20)),
           ),
-          child: const Center(
-            child: Text(
-              'Chat',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 25.0,
-                  fontWeight: FontWeight.bold),
-            ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'Chat',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 25.0,
+                    fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                width: 10,
+                height: 8,
+              ),
+              Icon(
+                Icons.chat,
+                color: Colors.green[900],
+              )
+            ],
           )),
     );
   }
