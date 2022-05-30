@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 
-class PedidosScreenFarma extends StatelessWidget {
-  const PedidosScreenFarma({Key key}) : super(key: key);
+class PedidosAceitesScreenFarma extends StatelessWidget {
+  const PedidosAceitesScreenFarma({Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class PedidosScreenFarma extends StatelessWidget {
       body: Column(
         children: [
           const Expanded(
-            child: Text('Parte da Gabi'),
+            child: Text('Parte da Gabi - pedidos aceites'),
           ),
         ],
       ),

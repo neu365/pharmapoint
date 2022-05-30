@@ -26,6 +26,10 @@ class MyApp extends StatelessWidget {
               primaryColor: Colors.green,
               secondaryHeaderColor: Colors.black,
               backgroundColor: Colors.grey[50],
+              iconTheme: IconThemeData(
+                size: 25.0,
+                color: Colors.green[900],
+              ),
               buttonTheme: ButtonTheme.of(context).copyWith(
                 buttonColor: Colors.green,
                 textTheme: ButtonTextTheme.primary,

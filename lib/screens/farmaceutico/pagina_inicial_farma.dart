@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:pharmapoint/widgets/widgets2/farma/chat_pharma/chat_button.dart';
-import 'package:pharmapoint/widgets/widgets2/farma/chat_pharma/recentes_butao.dart';
+import 'package:pharmapoint/widgets/widgets2/farma/pendentes_butao.dart';
+import 'package:pharmapoint/widgets/widgets2/farma/pedidos_aceiteis_butao.dart';
 
 class PaginaInicialFarma extends StatelessWidget {
   const PaginaInicialFarma({Key key}) : super(key: key);
@@ -76,7 +77,9 @@ class PaginaInicialFarma extends StatelessWidget {
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const ChatButton(),
           const SizedBox(height: 10, width: 10),
-          const Recentes(),
+          const PedidosAceitesButton(),
+          const SizedBox(height: 10, width: 10),
+          const PendentesButton()
         ]),
       ]),
     );

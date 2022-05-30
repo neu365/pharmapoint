@@ -37,7 +37,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
+                          /*Container(
                             height: 150,
                             decoration: const BoxDecoration(
                               color: Color(0xFFEEEEEE),
@@ -48,7 +48,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                               height: 300,
                               fit: BoxFit.cover,
                             ),
-                          ),
+                          ),*/
                         ],
                       ),
                     ),

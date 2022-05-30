@@ -6,22 +6,33 @@ import 'package:pharmapoint/screens/user/pedido_detail_screen.dart';
 import 'package:intl/intl.dart';
 
 class PedidoItem extends StatelessWidget {
-  const PedidoItem(
+  PedidoItem(
       this.title,
       this.estimatedCost,
       this.requestTime,
-      this.isAccepted,
       this.hasPrescription,
+      this.isAccepted,
+      this.prescriptionNumber,
+      this.prescriptionCode,
+      this.prescriptionPin,
+      this.observations,
+      this.requestDelivered,
       this.userName,
       this.isMe,
       this.length,
       {this.key});
 
   final String title;
-  final num estimatedCost;
+  final double estimatedCost;
   final Timestamp requestTime;
-  final bool isAccepted;
-  final bool hasPrescription;
+  bool hasPrescription;
+  bool isAccepted;
+  final int prescriptionNumber;
+  final int prescriptionCode;
+  final int prescriptionPin;
+  final String observations;
+  final bool requestDelivered;
+
   final String userName;
   final bool isMe;
   final int length;
@@ -38,9 +49,14 @@ class PedidoItem extends StatelessWidget {
             return PedidoDetailScreen(
               title,
               estimatedCost,
-              myDateTime,
-              isAccepted,
+              requestTime,
               hasPrescription,
+              isAccepted,
+              prescriptionNumber,
+              prescriptionCode,
+              prescriptionPin,
+              observations,
+              requestDelivered,
             );
           },
         ),

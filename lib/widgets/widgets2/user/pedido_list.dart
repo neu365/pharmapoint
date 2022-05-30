@@ -10,7 +10,11 @@ class Pedidos extends StatelessWidget {
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     return StreamBuilder(
-      stream: FirebaseFirestore.instance.collection('pedido').snapshots(),
+      stream: FirebaseFirestore.instance
+          .collection('pedido')
+          .orderBy('requestTime', descending: true)
+          .where('userId', isEqualTo: user.uid)
+          .snapshots(),
       builder: (context, AsyncSnapshot<QuerySnapshot> pedidoSnapshot) {
         if (pedidoSnapshot.connectionState == ConnectionState.waiting) {
           return const Center(
@@ -29,11 +33,16 @@ class Pedidos extends StatelessWidget {
               pedidoDocs[index].data()['title'],
               pedidoDocs[index].data()['estimatedCost'],
               pedidoDocs[index].data()['requestTime'],
-              pedidoDocs[index].data()['isAccepted'],
               pedidoDocs[index].data()['hasPrescription'],
-              pedidoDocs[index].data()['userId'],
+              pedidoDocs[index].data()['isAccepted'],
+              pedidoDocs[index].data()['prescriptionNumber'],
+              pedidoDocs[index].data()['prescriptionCode'],
+              pedidoDocs[index].data()['prescriptionPin'],
+              pedidoDocs[index].data()['observations'],
+              pedidoDocs[index].data()['requestDelivered'],
+              pedidoDocs[index].data()['userName'],
               pedidoDocs[index].data()['userId'] == user.uid,
-              5,
+              pedidoDocs.length,
               key: ValueKey(pedidoDocs[index].id),
             ),
           );

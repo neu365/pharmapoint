@@ -20,6 +20,7 @@ class AuthScreenState extends State<AuthScreen> {
     String email,
     String password,
     String username,
+    bool isUser,
     bool isLogin,
     BuildContext ctx,
   ) async {
@@ -45,6 +46,7 @@ class AuthScreenState extends State<AuthScreen> {
             .set({
           'username': username,
           'email': email,
+          'isUser': true,
         });
       }
     } on PlatformException catch (err) {
@@ -82,9 +84,7 @@ class AuthScreenState extends State<AuthScreen> {
           const Text(
             'Pharmapoint',
             style: TextStyle(
-                color: Color.fromARGB(255, 1, 39, 2),
-                fontSize: 40,
-                fontWeight: FontWeight.bold),
+                color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
           ),
           AuthForm(
             _submitAuthForm,

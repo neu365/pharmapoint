@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import 'package:pharmapoint/screens/farmaceutico/pedidos_farma.dart';
+import 'package:pharmapoint/screens/farmaceutico/pedidos_aceites_farma.dart';
 
-class Recentes extends StatelessWidget {
-  const Recentes({Key key}) : super(key: key);
+class PedidosAceitesButton extends StatelessWidget {
+  const PedidosAceitesButton({Key key}) : super(key: key);
 
   void selectRecentes(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return const PedidosScreenFarma();
+          return const PedidosAceitesScreenFarma();
         },
       ),
     );
@@ -29,13 +29,13 @@ class Recentes extends StatelessWidget {
               Colors.green[200],
             ),
             padding: MaterialStateProperty.all(
-                const EdgeInsets.symmetric(horizontal: 100, vertical: 20)),
+                const EdgeInsets.symmetric(horizontal: 10, vertical: 20)),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text(
-                'Pedidos',
+                'Pedidos aceites',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
