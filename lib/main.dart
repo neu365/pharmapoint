@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         future: initialization,
         builder: (context, appSnapshot) {
           return MaterialApp(
-            title: 'FlutterChat',
+            title: 'Pharmapoint',
             theme: ThemeData(
               primaryColor: Colors.green,
               secondaryHeaderColor: Colors.black,
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
                 color: Colors.green[900],
               ),
               buttonTheme: ButtonTheme.of(context).copyWith(
-                buttonColor: Colors.green,
+                buttonColor: Colors.green[900],
                 textTheme: ButtonTextTheme.primary,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),

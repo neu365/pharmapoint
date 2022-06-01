@@ -9,7 +9,7 @@ class PedidosAceitesButton extends StatelessWidget {
     Navigator.of(ctx).push(
       MaterialPageRoute(
         builder: (_) {
-          return const PedidosAceitesScreenFarma();
+          return const PedidosAceitesWidget();
         },
       ),
     );

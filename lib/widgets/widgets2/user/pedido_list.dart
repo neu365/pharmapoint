@@ -30,8 +30,11 @@ class Pedidos extends StatelessWidget {
           return ListView.builder(
             itemCount: pedidoDocs.length,
             itemBuilder: (context, index) => PedidoItem(
+              pedidoDocs[index].id,
               pedidoDocs[index].data()['title'],
-              pedidoDocs[index].data()['estimatedCost'],
+              pedidoDocs[index].data()['estimatedCost'] == 0
+                  ? 'x'
+                  : pedidoDocs[index].data()['estimatedCost'],
               pedidoDocs[index].data()['requestTime'],
               pedidoDocs[index].data()['hasPrescription'],
               pedidoDocs[index].data()['isAccepted'],

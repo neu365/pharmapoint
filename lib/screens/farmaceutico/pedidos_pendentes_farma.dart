@@ -27,7 +27,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
         backgroundColor: Theme.of(context).primaryColor,
         automaticallyImplyLeading: true,
         leading: IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.arrow_back,
             color: Colors.white,
             size: 30,
@@ -36,7 +36,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
             await Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => PaginaInicialFarma(),
+                builder: (context) => const PaginaInicialFarma(),
               ),
             );
           },
@@ -44,11 +44,11 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
         title: const Text(
           'Pedidos Pendentes',
         ),
-        actions: [],
+        actions: const [],
         centerTitle: true,
         elevation: 4,
       ),
-      backgroundColor: Color(0xFFF1F4F8),
+      backgroundColor: const Color(0xFFF1F4F8),
       body: Stack(
         children: [
           Column(
@@ -57,17 +57,18 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 height: 108,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 16, 0, 0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 0.95,
                           height: 50,
@@ -75,16 +76,17 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8),
                             border: Border.all(
-                              color: Color(0xFFF1F4F8),
+                              color: const Color(0xFFF1F4F8),
                               width: 2,
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(8, 0, 8, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                8, 0, 8, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       4, 0, 4, 0),
                                   child: Icon(
@@ -95,19 +97,20 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 ),
                                 Expanded(
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        4, 0, 0, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            4, 0, 0, 0),
                                     child: TextFormField(
                                       controller: textController,
                                       obscureText: false,
-                                      decoration: InputDecoration(
+                                      decoration: const InputDecoration(
                                         labelText: 'Pesquisar pedidos..',
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
@@ -117,20 +120,20 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
                                       ),
-                                      style: TextStyle(
+                                      style: const TextStyle(
                                         fontSize: 14,
                                         fontWeight: FontWeight.normal,
                                       ),
                                     ),
                                   ),
                                 ),
-                                Expanded(
+                                const Expanded(
                                   child: Align(
                                     alignment: AlignmentDirectional(0.95, 0),
                                     child: Icon(
@@ -155,11 +158,12 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
                         child: Container(
                           width: double.infinity,
                           height: 90,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
@@ -167,7 +171,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 1, 60, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -175,7 +179,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome do medicamento',
                                             style: TextStyle(
@@ -188,7 +192,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome da pessoa',
                                             style: TextStyle(
@@ -201,7 +205,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Detalhes',
                                             style: TextStyle(
@@ -220,7 +224,96 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
+                                      Icons.check,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.delete,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        child: Container(
+                          width: double.infinity,
+                          height: 90,
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      8, 1, 60, 0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: const [
+                                          Text(
+                                            'Nome do medicamento',
+                                            style: TextStyle(
+                                              color: Color(0xFF090F13),
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: const [
+                                          Text(
+                                            'Nome da pessoa',
+                                            style: TextStyle(
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: const [
+                                          Text(
+                                            'Detalhes',
+                                            style: TextStyle(
+                                              color: Color(0xFF4B39EF),
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.w500,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Column(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  IconButton(
+                                    icon: const Icon(
                                       Icons.check,
                                     ),
                                     onPressed: () {
@@ -233,7 +326,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.delete,
                                     ),
                                     onPressed: () {
@@ -247,11 +340,12 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
                         child: Container(
                           width: double.infinity,
                           height: 90,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
@@ -259,7 +353,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 1, 60, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -267,7 +361,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome do medicamento',
                                             style: TextStyle(
@@ -280,7 +374,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome da pessoa',
                                             style: TextStyle(
@@ -293,7 +387,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Detalhes',
                                             style: TextStyle(
@@ -312,7 +406,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.check,
                                     ),
                                     onPressed: () {
@@ -325,7 +419,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.delete,
                                     ),
                                     onPressed: () {
@@ -339,11 +433,12 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
                         child: Container(
                           width: double.infinity,
                           height: 90,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
@@ -351,7 +446,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 1, 60, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -359,7 +454,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome do medicamento',
                                             style: TextStyle(
@@ -372,7 +467,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome da pessoa',
                                             style: TextStyle(
@@ -385,7 +480,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Detalhes',
                                             style: TextStyle(
@@ -404,7 +499,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.check,
                                     ),
                                     onPressed: () {
@@ -417,9 +512,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
-                                      Icons.delete,
-                                    ),
+                                    icon: const Icon(Icons.delete),
                                     onPressed: () {
                                       print('IconButton pressed ...');
                                     },
@@ -431,11 +524,12 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
                         child: Container(
                           width: double.infinity,
                           height: 90,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Colors.white,
                           ),
                           child: Row(
@@ -443,7 +537,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                             children: [
                               Expanded(
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       8, 1, 60, 0),
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -451,7 +545,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     children: [
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome do medicamento',
                                             style: TextStyle(
@@ -464,7 +558,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Nome da pessoa',
                                             style: TextStyle(
@@ -477,7 +571,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                       ),
                                       Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        children: [
+                                        children: const [
                                           Text(
                                             'Detalhes',
                                             style: TextStyle(
@@ -496,7 +590,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.check,
                                     ),
                                     onPressed: () {
@@ -509,97 +603,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.delete),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
-                        child: Container(
-                          width: double.infinity,
-                          height: 90,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      8, 1, 60, 0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Nome do medicamento',
-                                            style: TextStyle(
-                                              color: Color(0xFF090F13),
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Nome da pessoa',
-                                            style: TextStyle(
-                                              color: Color(0xFF95A1AC),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.normal,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Text(
-                                            'Detalhes',
-                                            style: TextStyle(
-                                              color: Color(0xFF4B39EF),
-                                              fontSize: 14,
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(
-                                      Icons.check,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
-                                  ),
-                                ],
-                              ),
-                              Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(
+                                    icon: const Icon(
                                       Icons.delete,
                                     ),
                                     onPressed: () {

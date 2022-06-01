@@ -5,25 +5,27 @@ import 'package:flutter/material.dart';
 import 'package:pharmapoint/widgets/widgets2/user/pedido_detail.dart';
 
 class PedidoDetailScreen extends StatelessWidget {
+  final String pedidoId;
   final String title;
-  final double estimatedCost;
+  var estimatedCost;
   final Timestamp requestTime;
   bool hasPrescription;
   bool isAccepted;
   final int prescriptionNumber;
-  final int prescritionCode;
+  final int prescriptionCode;
   final int prescriptionPin;
   final String observations;
-  final bool requestDelivered;
+  bool requestDelivered;
 
   PedidoDetailScreen(
+    this.pedidoId,
     this.title,
     this.estimatedCost,
     this.requestTime,
     this.hasPrescription,
     this.isAccepted,
     this.prescriptionNumber,
-    this.prescritionCode,
+    this.prescriptionCode,
     this.prescriptionPin,
     this.observations,
     this.requestDelivered,
@@ -33,7 +35,7 @@ class PedidoDetailScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Detalhes do pedido $title'),
+        title: Text('Detalhes do pedido'),
         backgroundColor: Colors.green,
         centerTitle: true,
       ),
@@ -44,13 +46,14 @@ class PedidoDetailScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               PedidoDetail(
+                pedidoId,
                 title,
                 estimatedCost,
                 requestTime,
                 hasPrescription,
                 isAccepted,
                 prescriptionNumber,
-                prescritionCode,
+                prescriptionCode,
                 prescriptionPin,
                 observations,
                 requestDelivered,

@@ -46,7 +46,7 @@ class PendentesButton extends StatelessWidget {
                 height: 8,
               ),
               Icon(
-                Icons.list_alt,
+                Icons.pending_actions,
                 color: Colors.green[900],
               )
             ],

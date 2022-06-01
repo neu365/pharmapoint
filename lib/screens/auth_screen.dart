@@ -20,6 +20,7 @@ class AuthScreenState extends State<AuthScreen> {
     String email,
     String password,
     String username,
+    String phoneNumber,
     bool isUser,
     bool isLogin,
     BuildContext ctx,
@@ -45,6 +46,7 @@ class AuthScreenState extends State<AuthScreen> {
             .doc(authResult.user.uid)
             .set({
           'username': username,
+          'phoneNumber': phoneNumber,
           'email': email,
           'isUser': true,
         });
@@ -78,19 +80,28 @@ class AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.green[500],
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'Pharmapoint',
-            style: TextStyle(
-                color: Colors.white, fontSize: 40, fontWeight: FontWeight.bold),
-          ),
-          AuthForm(
-            _submitAuthForm,
-            _isLoading,
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 50,
+              width: 300,
+            ),
+            const Text(
+              'Pharmapoint',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold),
+            ),
+            AuthForm(
+              _submitAuthForm,
+              _isLoading,
+            ),
+          ],
+        ),
       ),
     );
   }

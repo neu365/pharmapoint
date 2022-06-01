@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 
 class PedidoItem extends StatelessWidget {
   PedidoItem(
+      this.pedidoId,
       this.title,
       this.estimatedCost,
       this.requestTime,
@@ -22,8 +23,10 @@ class PedidoItem extends StatelessWidget {
       this.length,
       {this.key});
 
+  final String pedidoId;
+
   final String title;
-  final double estimatedCost;
+  var estimatedCost;
   final Timestamp requestTime;
   bool hasPrescription;
   bool isAccepted;
@@ -47,6 +50,7 @@ class PedidoItem extends StatelessWidget {
         MaterialPageRoute(
           builder: (_) {
             return PedidoDetailScreen(
+              pedidoId,
               title,
               estimatedCost,
               requestTime,
@@ -81,12 +85,19 @@ class PedidoItem extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(6),
               child: FittedBox(
-                child: Text(
-                  '$estimatedCost€',
-                  style: TextStyle(
-                      color: Colors.green[900], fontWeight: FontWeight.bold),
-                ),
-              ),
+                  child: estimatedCost == 0
+                      ? Text(
+                          'X',
+                          style: TextStyle(
+                              color: Colors.green[900],
+                              fontWeight: FontWeight.bold),
+                        )
+                      : Text(
+                          '$estimatedCost€',
+                          style: TextStyle(
+                              color: Colors.green[900],
+                              fontWeight: FontWeight.bold),
+                        )),
             ),
           ),
           title: Text(

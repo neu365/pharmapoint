@@ -90,7 +90,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           'Iva',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF8B97A2),
+                            color: Colors.black,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -99,7 +99,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           '23%',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF151B1E),
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -117,7 +117,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           'Taxa de entrega',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF8B97A2),
+                            color: Colors.black,
                             fontSize: 14,
                             fontWeight: FontWeight.normal,
                           ),
@@ -126,7 +126,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           'Valor de entrega',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF151B1E),
+                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -148,7 +148,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                               'Total',
                               style: TextStyle(
                                 fontFamily: 'Lexend Deca',
-                                color: Color(0xFF8B97A2),
+                                color: Colors.black,
                                 fontSize: 20,
                                 fontWeight: FontWeight.normal,
                               ),
@@ -156,7 +156,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                             IconButton(
                               icon: const Icon(
                                 Icons.info_outlined,
-                                color: Color(0xFF57636C),
+                                color: Colors.black,
                                 size: 18,
                               ),
                               onPressed: () {},
@@ -167,7 +167,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           'Total',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
-                            color: Color(0xFF090F13),
+                            color: Colors.black,
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ),
