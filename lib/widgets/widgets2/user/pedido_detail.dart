@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:pharmapoint/screens/user/fatura.dart';
 import 'package:intl/intl.dart';
 import 'package:pharmapoint/screens/user/receita_detail.dart';
-import 'package:pharmapoint/widgets/widgets2/user/delivered.dart';
+import 'package:pharmapoint/widgets/widgets2/user/delivered_button.dart';
 
 class PedidoDetail extends StatefulWidget {
   final String pedidoId;
@@ -219,7 +219,18 @@ class _PedidoDetailState extends State<PedidoDetail> {
                                 selectFatura(context);
                               }),
                         ])
-                  : Delivered(widget.pedidoId, widget.requestDelivered)
+                  : Delivered(
+                      widget.pedidoId,
+                      widget.requestDelivered,
+                      widget.title,
+                      widget.estimatedCost,
+                      widget.requestTime,
+                      widget.hasPrescription,
+                      widget.isAccepted,
+                      widget.prescriptionNumber,
+                      widget.prescritionCode,
+                      widget.prescriptionPin,
+                      widget.observations)
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
