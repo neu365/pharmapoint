@@ -75,11 +75,11 @@ class PaginaInicialUser extends StatelessWidget {
       body: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
         // ignore: prefer_const_literals_to_create_immutables
         Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const ChatButton(),
+          ChatButton(),
           const SizedBox(height: 10, width: 10),
-          const Recentes(),
+          Recentes(),
           const SizedBox(height: 10, width: 10),
-          const NovoPedido(),
+          NovoPedido(),
         ]),
       ]),
     );

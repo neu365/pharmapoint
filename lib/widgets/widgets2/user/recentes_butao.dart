@@ -18,7 +18,7 @@ class Recentes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 400,
+      width: MediaQuery.of(context).size.width,
       height: 100,
       child: ElevatedButton(
           onPressed: () {

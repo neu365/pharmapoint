@@ -1,6 +1,9 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, deprecated_member_use
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:pharmapoint/widgets/widgets2/user/user_image_picker.dart';
 
 class AuthForm extends StatefulWidget {
   AuthForm(this.submitFn, this.isLoading, {Key key}) : super(key: key);
@@ -28,10 +31,25 @@ class AuthFormState extends State<AuthForm> {
   final _isUser = true;
   var _userPassword = '';
   var _userPhone = '';
+  File _userImageFile;
+
+  void _pickedImage(File image) {
+    _userImageFile = image;
+  }
 
   void _trySubmit() {
     final isValid = _formKey.currentState.validate();
     FocusScope.of(context).unfocus();
+
+    if (_userImageFile == null && !_isLogin) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Por favor, escolha uma imagem!'),
+          backgroundColor: Theme.of(context).errorColor,
+        ),
+      );
+      return;
+    }
 
     if (isValid) {
       _formKey.currentState.save();
@@ -52,6 +70,7 @@ class AuthFormState extends State<AuthForm> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
+                if (!_isLogin) UserImagePicker(_pickedImage),
                 TextFormField(
                   key: const ValueKey('email'),
                   autocorrect: false,

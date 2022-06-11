@@ -19,7 +19,7 @@ class NovoPedido extends StatelessWidget {
     }
 
     return SizedBox(
-      width: 400,
+      width: MediaQuery.of(context).size.width,
       height: 100,
       child: ElevatedButton(
           onPressed: () {
