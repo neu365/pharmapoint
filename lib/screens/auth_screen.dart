@@ -1,9 +1,12 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:pharmapoint/widgets/auth/auth_form.dart';
+
+import 'package:firebase_storage/firebase_storage.dart';
 
 class AuthScreen extends StatefulWidget {
   const AuthScreen({Key key}) : super(key: key);
@@ -22,6 +25,7 @@ class AuthScreenState extends State<AuthScreen> {
     String username,
     String phoneNumber,
     bool isUser,
+    File image,
     bool isLogin,
     BuildContext ctx,
   ) async {
@@ -41,6 +45,16 @@ class AuthScreenState extends State<AuthScreen> {
           email: email,
           password: password,
         );
+
+        final ref = FirebaseStorage.instance
+            .ref()
+            .child('user_image')
+            .child(authResult.user.uid + '.jpg');
+
+        await ref.putFile(image);
+
+        ref.getDownloadURL();
+
         await FirebaseFirestore.instance
             .collection('users')
             .doc(authResult.user.uid)
