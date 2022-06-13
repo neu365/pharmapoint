@@ -316,9 +316,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.check,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -329,9 +327,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.delete,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -409,9 +405,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.check,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -422,9 +416,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.delete,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -502,9 +494,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.check,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -513,9 +503,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                 children: [
                                   IconButton(
                                     icon: const Icon(Icons.delete),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -593,9 +581,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.check,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),
@@ -606,9 +592,7 @@ class _PedidosPendentesWidgetState extends State<PedidosPendentesWidget> {
                                     icon: const Icon(
                                       Icons.delete,
                                     ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
+                                    onPressed: () {},
                                   ),
                                 ],
                               ),

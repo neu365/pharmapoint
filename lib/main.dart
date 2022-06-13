@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
                           return const PaginaInicialUser();
                         }
                       }
-                      return const AuthScreen();
+                      return AuthScreen();
                     }),
           );
         });

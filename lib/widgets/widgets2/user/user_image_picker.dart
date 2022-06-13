@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class UserImagePicker extends StatefulWidget {
-  UserImagePicker(this.imagePickFn);
+  const UserImagePicker(this.imagePickFn);
 
   final void Function(File pickedImage) imagePickFn;
 
@@ -39,8 +39,8 @@ class _UserImagePickerState extends State<UserImagePicker> {
         ),
         TextButton.icon(
           onPressed: _pickImage,
-          icon: Icon(Icons.image),
-          label: Text('Adiconar imagem'),
+          icon: const Icon(Icons.image),
+          label: const Text('Adiconar imagem'),
         ),
       ],
     );

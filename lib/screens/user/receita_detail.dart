@@ -1,9 +1,6 @@
 // ignore_for_file: must_be_immutable
 
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pharmapoint/screens/user/fatura.dart';
-import 'package:intl/intl.dart';
 
 class ReceitaDetail extends StatefulWidget {
   final int prescriptionNumber;
@@ -25,7 +22,7 @@ class _ReceitaDetailState extends State<ReceitaDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalhes da receita'),
+        title: const Text('Detalhes da receita'),
         backgroundColor: Colors.green,
         centerTitle: true,
       ),

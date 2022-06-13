@@ -9,13 +9,11 @@ import 'package:pharmapoint/widgets/auth/auth_form.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
 class AuthScreen extends StatefulWidget {
-  const AuthScreen({Key key}) : super(key: key);
-
   @override
-  AuthScreenState createState() => AuthScreenState();
+  _AuthScreenState createState() => _AuthScreenState();
 }
 
-class AuthScreenState extends State<AuthScreen> {
+class _AuthScreenState extends State<AuthScreen> {
   final _auth = FirebaseAuth.instance;
   var _isLoading = false;
 
@@ -23,8 +21,6 @@ class AuthScreenState extends State<AuthScreen> {
     String email,
     String password,
     String username,
-    String phoneNumber,
-    bool isUser,
     File image,
     bool isLogin,
     BuildContext ctx,
@@ -53,26 +49,25 @@ class AuthScreenState extends State<AuthScreen> {
 
         await ref.putFile(image);
 
-        ref.getDownloadURL();
+        final url = await ref.getDownloadURL();
 
         await FirebaseFirestore.instance
             .collection('users')
             .doc(authResult.user.uid)
             .set({
           'username': username,
-          'phoneNumber': phoneNumber,
           'email': email,
+          'image_url': url,
           'isUser': true,
         });
       }
     } on PlatformException catch (err) {
-      var message = 'Um erro ocorreu, por favor verifique as credenciais!';
+      var message = 'Um erro ocorreu, verifique as credenciais!';
 
       if (err.message != null) {
         message = err.message;
       }
 
-      // ignore: deprecated_member_use
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(message),
@@ -83,7 +78,7 @@ class AuthScreenState extends State<AuthScreen> {
         _isLoading = false;
       });
     } catch (err) {
-      //print(err);
+      print(err);
       setState(() {
         _isLoading = false;
       });
@@ -93,29 +88,10 @@ class AuthScreenState extends State<AuthScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green[500],
-      body: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 50,
-              width: 300,
-            ),
-            const Text(
-              'Pharmapoint',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold),
-            ),
-            AuthForm(
-              _submitAuthForm,
-              _isLoading,
-            ),
-          ],
-        ),
+      backgroundColor: Theme.of(context).primaryColor,
+      body: AuthForm(
+        _submitAuthForm,
+        _isLoading,
       ),
     );
   }

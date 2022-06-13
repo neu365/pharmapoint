@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class FaturaWidget extends StatefulWidget {
-  const FaturaWidget({Key key}) : super(key: key);
+  FaturaWidget(this.cost, {Key key}) : super(key: key);
+  var cost;
 
   @override
   FaturaWidgetState createState() => FaturaWidgetState();
@@ -63,13 +64,13 @@ class FaturaWidgetState extends State<FaturaWidget> {
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
+                      children: [
                         Text(
                           'Preço',
                           style: TextStyle(color: Colors.black),
                         ),
                         Text(
-                          '100',
+                          widget.cost.toString(),
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
                             color: Color(0xFF151B1E),
@@ -123,7 +124,7 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           ),
                         ),
                         Text(
-                          'Valor de entrega',
+                          '1.25€',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
                             color: Colors.black,

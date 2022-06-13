@@ -47,7 +47,7 @@ class _PedidoDetailState extends State<PedidoDetail> {
       Navigator.of(ctx).push(
         MaterialPageRoute(
           builder: (_) {
-            return const FaturaWidget();
+            return FaturaWidget(widget.estimatedCost);
           },
         ),
       );
