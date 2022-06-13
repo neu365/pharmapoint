@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:pharmapoint/screens/user/redefinir_senha.dart';
 import 'package:pharmapoint/widgets/widgets2/user/user_image_picker.dart';
 
 class AuthForm extends StatefulWidget {
@@ -144,7 +145,16 @@ class _AuthFormState extends State<AuthForm> {
                           _isLogin = !_isLogin;
                         });
                       },
-                    )
+                    ),
+                  if (!widget.isLoading)
+                    _isLogin
+                        ? TextButton(
+                            child: Text('Esqueci-me da palavra-passe!'),
+                            onPressed: () {
+                              PalavraPasse();
+                            },
+                          )
+                        : Container()
                 ],
               ),
             ),

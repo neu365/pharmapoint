@@ -59,6 +59,12 @@ class FaturaWidgetState extends State<FaturaWidget> {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
+                  Image.asset(
+                    'assets/images/logo.jpg',
+                    height: 200,
+                    width: 200,
+                    fit: BoxFit.fitWidth,
+                  ),
                   Padding(
                     padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
                     child: Row(
@@ -70,37 +76,10 @@ class FaturaWidgetState extends State<FaturaWidget> {
                           style: TextStyle(color: Colors.black),
                         ),
                         Text(
-                          widget.cost.toString(),
+                          '${widget.cost}€',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
                             color: Color(0xFF151B1E),
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          'Iva',
-                          style: TextStyle(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.black,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                          ),
-                        ),
-                        Text(
-                          '23%',
-                          style: TextStyle(
-                            fontFamily: 'Lexend Deca',
-                            color: Colors.black,
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -125,6 +104,33 @@ class FaturaWidgetState extends State<FaturaWidget> {
                         ),
                         Text(
                           '1.25€',
+                          style: TextStyle(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.black,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(24, 4, 24, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: const [
+                        Text(
+                          'Iva',
+                          style: TextStyle(
+                            fontFamily: 'Lexend Deca',
+                            color: Colors.black,
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                          ),
+                        ),
+                        Text(
+                          '23%',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
                             color: Colors.black,
@@ -164,8 +170,8 @@ class FaturaWidgetState extends State<FaturaWidget> {
                             ),
                           ],
                         ),
-                        const Text(
-                          'Total',
+                        Text(
+                          (widget.cost + 1.25).toString() + '€',
                           style: TextStyle(
                             fontFamily: 'Lexend Deca',
                             color: Colors.black,

@@ -89,9 +89,30 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: AuthForm(
-        _submitAuthForm,
-        _isLoading,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            SizedBox(
+              height: 100,
+              width: 10,
+            ),
+            Image.asset(
+              'assets/images/logo.jpg',
+              height: 200,
+              width: 200,
+              fit: BoxFit.fitWidth,
+            ),
+            AuthForm(
+              _submitAuthForm,
+              _isLoading,
+            ),
+            SizedBox(
+              height: 20,
+              width: 10,
+            ),
+          ],
+        ),
       ),
     );
   }
