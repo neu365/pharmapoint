@@ -1,5 +1,8 @@
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:pharmapoint/screens/user/pagina_inicial_user.dart';
 
 class CriarNovoPedidoWidget extends StatefulWidget {
   const CriarNovoPedidoWidget({Key key}) : super(key: key);
@@ -9,22 +12,58 @@ class CriarNovoPedidoWidget extends StatefulWidget {
 }
 
 class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
-  TextEditingController textController1;
+  var titlenew;
+  var numeronew;
+  var codigonew;
+  var pinnew;
+  var observacoesnew;
+
+  TextEditingController title;
   bool checkboxListTileValue;
-  TextEditingController textController2;
-  TextEditingController textController3;
-  TextEditingController textController4;
-  TextEditingController textController5;
+  TextEditingController numero;
+  TextEditingController codigo;
+  TextEditingController pin;
+  TextEditingController observacoes;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  Future _criarPedido(checkboxListTileValue) async {
+    FocusScope.of(context).unfocus();
+    final user = FirebaseAuth.instance.currentUser;
+
+    if (checkboxListTileValue = false) {
+      FirebaseFirestore.instance.collection('pedido').add({
+        'title': titlenew,
+        'prescriptionNumber': numeronew,
+        'prescriptionCode': codigonew,
+        'prescriptionPin': pinnew,
+        'observations': observacoesnew,
+        'userId': user.uid,
+        'isAccepted': false,
+        'requestDelivered': false,
+        'requestTime': Timestamp.now(),
+        'hasPrescription': true,
+      });
+    } else {
+      FirebaseFirestore.instance.collection('pedido').add({
+        'title': titlenew,
+        'observations': observacoesnew,
+        'userId': user.uid,
+        'isAccepted': false,
+        'requestDelivered': false,
+        'requestTime': Timestamp.now(),
+        'hasPrescription': false,
+      });
+    }
+  }
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
-    textController5 = TextEditingController();
+    title = TextEditingController();
+    numero = TextEditingController();
+    codigo = TextEditingController();
+    pin = TextEditingController();
+    observacoes = TextEditingController();
   }
 
   @override
@@ -32,14 +71,9 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        automaticallyImplyLeading: false,
-        title: const Text(
-          'Criar Novo pedido',
-        ),
-        actions: const [],
-        centerTitle: false,
-        elevation: 2,
+        title: const Text('Novo pedido'),
+        backgroundColor: Colors.green,
+        centerTitle: true,
       ),
       body: SafeArea(
         child: GestureDetector(
@@ -61,17 +95,13 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                   ),
                 ),
               ),
-              if ((checkboxListTileValue) == true)
-                const Text(
-                  'Dados da receita:',
-                ),
               TextFormField(
-                controller: textController1,
-                onChanged: (_) => EasyDebounce.debounce(
-                  'textController1',
-                  const Duration(milliseconds: 2000),
-                  () => setState(() {}),
-                ),
+                controller: title,
+                onChanged: (value) {
+                  setState(() {
+                    titlenew = value;
+                  });
+                },
                 autofocus: true,
                 obscureText: false,
                 decoration: const InputDecoration(
@@ -99,13 +129,18 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 ),
               ),
               if ((checkboxListTileValue) == true)
+                const Text(
+                  'Dados da receita:',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              if ((checkboxListTileValue) == true)
                 TextFormField(
-                  controller: textController2,
-                  onChanged: (_) => EasyDebounce.debounce(
-                    'textController2',
-                    const Duration(milliseconds: 2000),
-                    () => setState(() {}),
-                  ),
+                  controller: numero,
+                  onChanged: (value) {
+                    setState(() {
+                      numeronew = value;
+                    });
+                  },
                   autofocus: true,
                   obscureText: false,
                   decoration: const InputDecoration(
@@ -134,12 +169,12 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 ),
               if ((checkboxListTileValue) == true)
                 TextFormField(
-                  controller: textController3,
-                  onChanged: (_) => EasyDebounce.debounce(
-                    'textController3',
-                    const Duration(milliseconds: 2000),
-                    () => setState(() {}),
-                  ),
+                  controller: codigo,
+                  onChanged: (value) {
+                    setState(() {
+                      codigonew = value;
+                    });
+                  },
                   autofocus: true,
                   obscureText: false,
                   decoration: const InputDecoration(
@@ -169,12 +204,12 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 ),
               if ((checkboxListTileValue) == true)
                 TextFormField(
-                  controller: textController4,
-                  onChanged: (_) => EasyDebounce.debounce(
-                    'textController4',
-                    const Duration(milliseconds: 2000),
-                    () => setState(() {}),
-                  ),
+                  controller: pin,
+                  onChanged: (value) {
+                    setState(() {
+                      pinnew = value;
+                    });
+                  },
                   autofocus: true,
                   obscureText: false,
                   decoration: const InputDecoration(
@@ -203,12 +238,12 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                   ),
                 ),
               TextFormField(
-                controller: textController5,
-                onChanged: (_) => EasyDebounce.debounce(
-                  'textController5',
-                  const Duration(milliseconds: 2000),
-                  () => setState(() {}),
-                ),
+                controller: observacoes,
+                onChanged: (value) {
+                  setState(() {
+                    observacoesnew = value;
+                  });
+                },
                 autofocus: true,
                 obscureText: false,
                 decoration: const InputDecoration(
@@ -238,7 +273,10 @@ class _CriarNovoPedidoWidgetState extends State<CriarNovoPedidoWidget> {
                 ),
               ),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  _criarPedido(checkboxListTileValue);
+                  PaginaInicialUser();
+                },
                 child: const Text('Adicionar pedido'),
               ),
             ],

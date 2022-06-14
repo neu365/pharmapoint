@@ -149,9 +149,9 @@ class _AuthFormState extends State<AuthForm> {
                   if (!widget.isLoading)
                     _isLogin
                         ? TextButton(
-                            child: Text('Esqueci-me da palavra-passe!'),
+                            child: const Text('Esqueci-me da palavra-passe!'),
                             onPressed: () {
-                              PalavraPasse();
+                              const PalavraPasse();
                             },
                           )
                         : Container()
